@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Свадьба Сергея и Венеры</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fff9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 100vh;
+            height: auto;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/salyaevsergey-svg/22062022/82f7e3b3609e2b67f2956c9c3448a5d6dadc251b/vmeste.jpg'
+) no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .message {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .couple-photo {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .message h2, .schedule h2, .location h2, .color-palette h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #8b4513;
+        }
+
+        .message p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .couple-photos {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .couple-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: start;
+        }
+
+        .photo-card {
+            text-align: center;
+            max-width: 250px;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .photo-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .photo-card p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #8b4513;
+            text-shadow: none;
+            font-weight: bold;
+        }
+
+        .gifts-info .card {
+            background: rgba(255, 255, 255, 0.95);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .note {
+            background: #fff8e1;
+            padding: 15px;
+            border-left: 4px solid #ffd54f;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .note p {
+            margin: 0;
+            font-style: italic;
+            color: #5d4037;
+            font-size: 1rem;
+        }
+
+        .color-palette .card, .schedule .card, .location .card {
+            background: rgba(255, 255, 255, 0.95);
+            max-width: 800px;
+            margin: 30px auto 0;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+.palette-img {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    display: block;
+}
+
+        .event {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+
+        .time-section {
+            min-width: 100px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+
+        .time-section p:first-child {
+            font-size: 1.3rem;
+        }
+
+        .details-section {
+            text-align: left;
+            flex: 1;
+        }
+
+        .location-text {
+            margin: 20px 0;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #8b4513;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .map-link:hover {
+            background: #a0522d;
+        }
+
+        .final-message {
+            text-align: center;
+            padding: 40px 20px 60px;
+            font-size: 1.3rem;
+            color: #8b4513;
+        }
+
+        /* Стиль для кнопки музыки (удобно для телефона) */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #8b4513;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-size: 24px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .music-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .hero h2 { font-size: 1.3rem; }
+            .hero h3 { font-size: 1.4rem; }
+            .hero p { font-size: 1rem; }
+            .countdown { font-size: 1.1rem; }
+            .message h2, .schedule h2, .location h2, .color-palette h2 { font-size: 1.5rem; }
+            .event { flex-direction: column; gap: 5px; }
+            .time-section { min-width: auto; }
+            .time-section p:first-child { font-size: 1.2rem; }
+            .music-btn { width: 48px; height: 48px; font-size: 20px; bottom: 15px; right: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Фоновая музыка -->
+<audio id="background-music" loop preload="auto" playsinline>
+    <source src="https://raw.githubusercontent.com/salyaevsergey-svg/22062022/main/Iron_And_Wine_-_Flightless_Bird_American_Mouth_b128f0d242.mp3" type="audio/mpeg">
+</audio>
+
+<button id="playMusicBtn" class="music-btn">
+    🎵
+</button>
+
+<script>
+    const audio = document.getElementById('background-music');
+    const playBtn = document.getElementById('playMusicBtn');
+    
+    audio.volume = 0.5;
+    let musicStarted = false;
+    
+    // Функция запуска музыки
+    function startMusic() {
+        if (musicStarted) return;
+        musicStarted = true;
+        
+        audio.play().then(() => {
+            playBtn.style.display = 'none';
+            console.log('Музыка запущена');
+        }).catch(e => {
+            console.log('Ошибка воспроизведения:', e);
+            musicStarted = false;
+        });
+    }
+    
+    // Запуск по кнопке
+    playBtn.addEventListener('click', startMusic);
+    
+    // Запуск при любом касании экрана (для Android и iOS)
+    document.body.addEventListener('touchstart', function onFirstTouch() {
+        if (!musicStarted) {
+            startMusic();
+        }
+        // Не удаляем слушатель, чтобы можно было перезапустить, если не запустилось
+    });
+    
+    // Также на всякий случай вешаем на клик (для десктопа)
+    document.body.addEventListener('click', function onFirstClick() {
+        if (!musicStarted) {
+            startMusic();
+        }
+    });
+    
+    // Показываем кнопку всегда, так как автовоспроизведение запрещено
+    playBtn.style.display = 'flex';
+</script>
+
+<!-- Блок 1: Герой с обратным отсчётом -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Приглашаем Вас на свадьбу</h1>
+        <h2>Сергея и Венеры</h2>
+        <p>22.08.2026</p>
+        <p>Под облаками</p>
+        <div class="countdown" id="countdown"></div>
+    </div>
+</section>
+
+<!-- Блок 2: Сообщение гостям -->
+<section class="message">
+    <img src="https://raw.githubusercontent.com/salyaevsergey-svg/22062022/f5f3ebf41defd9095764cdd9a90088886a17665d/vmeste.jpg
+" alt="Сергей и Венера" class="couple-photo">
+    <h2>Дорогой гость!</h2>
+    <p>Мы рады сообщить Вам, что 22.08.2026 состоится самое главное торжество в нашей жизни — день нашей свадьбы!</p>
+    <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>
+</section>
+
+<!-- Блок 3: Фотографии молодожёнов -->
+<section class="couple-photos">
+    <div class="couple-container">
+        <div class="photo-card">
+            <img src="https://raw.githubusercontent.com/salyaevsergey-svg/22062022/9dab2882bce31239c5087b309e4c998d0239004a/IMG_6653S.jpg
+" alt="Сергей">
+            <p>Сергей</p>
+        </div>
+        <div class="photo-card">
+            <img src="https://raw.githubusercontent.com/salyaevsergey-svg/22062022/9dab2882bce31239c5087b309e4c998d0239004a/IMG_3103V.jpg
+" alt="Венера">
+            <p>Венера</p>
+        </div>
+    </div>
+</section>
+
+<!-- Блок 4: Информация о подарках -->
+<section class="gifts-info">
+    <div class="card">
+        <p>Ваше присутствие в день нашей свадьбы — самый значимый подарок для нас! Мы понимаем, что дарить цветы на свадьбу — это традиция, но мы не сможем насладиться их красотой в полной мере.</p>
+        <p style="font-weight: bold;">Будем рады любой другой альтернативе (вино или в денежном эквиваленте).</p>
+        <div class="note">
+            <p><strong>Примечание!</strong> Будем благодарны, если вы воздержитесь от криков «Горько» на празднике, ведь поцелуй — это знак выражения чувств, он не может быть по заказу.</p>
+        </div>
+        <p style="font-weight: bold; color: #8b4513;">Пожалуйста, подтвердите своё присутствие до 22.07.2026</p>
+    </div>
+</section>
+
+<!-- Блок 5: Цветовая палитра -->
+<section class="color-palette">
+    <div class="card">
+        <h2>Цветовая палитра</h2>
+        <img src="https://raw.githubusercontent.com/salyaevsergey-svg/22062022/5dccf67df07a51b292446db5e8b0ecf29d344b9f/palitra.jpeg
+" alt="Цветовая палитра свадьбы" class="palette-img">
+        <p>Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры.</p>
+    </div>
+</section>
+
+<!-- Блок 6: Свадебное расписание -->
+<section class="schedule">
+    <div class="card">
+        <h2>Свадебное расписание</h2>
+        <div class="event">
+            <div class="time-section">
+                <p>15:00</p>
+            </div>
+            <div class="details-section">
+                <p><strong>Фуршет</strong></p>
+                <p>Новгородская ул., 58/1а<br>заезд через Пляж на озере Карьерное<br>Малый шатёр №3</p>
+           </div>
+        </div>
+        <div class="event">
+            <div class="time-section">
+                <p>16:00</p>
+            </div>
+            <div class="details-section">
+                <p><strong>Выездная регистрация</strong></p>
+                <p>Шатерный парк "Под облаками"</p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="time-section">
+                <p>17:00</p>
+            </div>
+            <div class="details-section">
+                <p><strong>Банкет</strong></p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="time-section">
+                <p>22:00</p>
+            </div>
+            <div class="details-section">
+                <p><strong>Завершение торжества</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок 7: Расположение мероприятия - финальная версия -->
+<section class="location">
+    <div class="card">
+        <h2>Расположение мероприятия</h2>
+        <p class="location-text">Все основные события пройдут в Шатерном парке "Под облаками".</p>
+        <p class="location-text"><strong>Адрес:</strong> Новгородская ул., 58/1а, заезд через Пляж на озере Карьерное<br>Малый шатёр №3 - метка на карте</p>
+        
+        <div class="map-container" style="position: relative; width: 100%; height: 400px; margin: 20px 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <iframe 
+                src="https://yandex.ru/map-widget/v1/?mode=search&text=Новгородская%20ул.,%2058/1а&z=15&ll=55.872471,54.708801&pt=55.872471,54.708801,pm2rdm&whatshere[point]=55.872471,54.708801&whatshere[text]=Шатерный%20парк%20%22Под%20облаками%22"
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                allowfullscreen="true"
+                style="position: absolute; top: 0; left: 0; border: 0;">
+            </iframe>
+        </div>
+        
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="https://yandex.ru/maps/?text=Новгородская+ул.,+58/1а" target="_blank" class="map-link">Открыть в Яндекс Картах</a>
+        </div>
+    </div>
+</section>
+
+<!-- Блок 8: Финальное приветствие -->
+<section class="final-message">
+    <h3>Будем рады Вас видеть!</h3>
+</section>
+
+<script>
+    // Улучшенный обратный отсчёт с использованием requestAnimationFrame для точности
+    function updateCountdown() {
+        const targetDate = new Date('2026-08-22T15:00:00');
+        const now = new Date();
+        const timeDiff = targetDate - now;
+
+        if (timeDiff <= 0) {
+            document.getElementById('countdown').innerHTML = "Свадьба уже сегодня!";
+            return;
+        }
+
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown').innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
